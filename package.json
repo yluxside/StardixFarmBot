@@ -1,8 +1,4 @@
 {
-  "name": "minebot",
-  "version": "1.0.0",
-  "description": "Farm de dinheiro servidor stardix",
-  "main": "index.js",
   "dependencies": {
     "colors": "^1.4.0",
     "discord.js": "^14.7.1",
