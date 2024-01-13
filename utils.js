@@ -13,7 +13,7 @@ async function enterRankup(bot) {
     bot.once('windowOpen', async (window) => {
         if (window.title.includes('Modos de Jogo')) {
             log(`Janela identificada: 'Modos de Jogo'`, 'grey')
-            await bot.clickWindow(20, 0, 0)
+            await bot.clickWindow(10, 0, 0)
         }
     })
 
@@ -40,7 +40,7 @@ async function getLocation(bot, home, cb) {
     }
 
     let coords = bot.entity.position
-    if (math.trunc(coords.z) === 0 && math.trunc(coords.x) === 0) {
+    if (math.trunc(coords.z) === 0 || math.trunc(coords.z) === -2 && math.trunc(coords.x) === 0) {
         const block = bot.blockAt(bot.entity.position.offset(0, -1, 0))
         if (!block) return;
         if (block.name === 'double_stone_slab') {
@@ -49,7 +49,7 @@ async function getLocation(bot, home, cb) {
             await enterRankup(bot)
         }
 
-        else if (block.name === 'lit_redstone_lamp') {
+        else if (block.name === 'stone') {
             bot.location = 'rankup'
             console.log('Rankup identificado')
             bot.on('messagestr', onMessage)
