@@ -129,7 +129,8 @@ const bot_creator = ({ username, pass, home, auth }) => {
     console.log(message.toAnsi())
     if (message.toString().includes('Por favor, faça o login')) bot.chat(`/login ${pass}`)
 
-    else if (message.toString().startsWith('Servidor está reiniciando') || '[StarDix] O servidor está iniciando...) {
+    else if (message.toString().startsWith('Servidor está reiniciando') || message.toString().includes('[StarDix] O servidor está iniciando...')) {
+
       console.log(`Servidor reiniciando, desconectando: ${bot.username}`.cyan)
       bot.isRestarting = true
       bot.quit()
