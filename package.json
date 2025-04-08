@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "dayjs": "1.11.13",
-    "mineflayer": "4.27.0",  
-    "worker-threads": "1.0.0"
-  }
-}
