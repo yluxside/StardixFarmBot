@@ -50,6 +50,7 @@ async function getLocation(bot, home, cb) {
             bot.on('messagestr', onMessage);
             await sleep(500);
             log(`Indo até a home: ${home}`, 'grey');
+            bot.chat(`${home}`);
         }
         cb();
     }
